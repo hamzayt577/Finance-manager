@@ -1,0 +1,15 @@
+{
+  "name": "budget-tracker",
+  "version": "1.0.0",
+  "description": "An app that tracks your budget and spendings",
+  "main": "script.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Hamza Shaikh",
+  "license": "ISC",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
