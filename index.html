@@ -13,7 +13,59 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <p>E</p>
+    <h3 class="budget">Budget:</h3>
+    <div class="budget">
+      <input
+        type="number"
+        class="enter-budget"
+        placeholder="Enter your budget"
+      />
+      <button class="submit-budget">Submit</button>
+    </div>
+
+    <div class="income">
+      <h5>Income:</h5>
+      <input
+        type="number"
+        class="income-input"
+        placeholder="Enter your income"
+      />
+      <input
+        type="text"
+        class="income-description"
+        placeholder="Income description"
+      />
+      <button class="submit-income">Submit</button>
+    </div>
+
+    <div class="expense">
+      <h5>Expense:</h5>
+      <input
+        type="number"
+        class="expense-input"
+        placeholder="Enter your income"
+      />
+      <input
+        type="text"
+        class="expense-description"
+        placeholder="Expense description"
+      />
+      <button class="submit-expense">Submit</button>
+    </div>
+
+    <!-- <div class="income">
+      <span class="income-name">Salary</span>
+      <br />
+      <span class="income-amount">8000</span>
+    </div> -->
+
+    <!-- <div class="expense">
+      <span class="expense-name">Groceries</span>
+      <br />
+      <span class="expense-amount">70</span>
+    </div> -->
+
+    <div class="expense-and-income"></div>
 
     <script src="./script.js"></script>
   </body>
