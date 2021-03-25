@@ -18,6 +18,9 @@ const expenseAndIncomeDiv = document.querySelector(".expense-and-income");
 const incomeDescriptions = [];
 const incomeAmounts = [];
 
+const expenseDescriptions = [];
+const expenseAmounts = [];
+
 document.querySelector(".budget").innerHTML = `Budget: ${actualBudget}`;
 
 const incomeFunc = function () {
@@ -58,4 +61,48 @@ const renderIncomeHTML = function (name, value) {
   expenseAndIncomeDiv.insertAdjacentHTML("afterbegin", markup);
 };
 
+const expenseFunc = function () {
+  const enterExpenseString = parseFloat(enterExpense.value);
+  if (enterExpense.value === "" && descriptionExpense.value === "") {
+    alert("Please enter expense and expense description");
+  } else {
+    if (actualBudget < enterExpenseString) {
+      alert("Your expense is over your budget!");
+      descriptionExpense.value = "";
+      enterExpense.value = "";
+    } else {
+      expenseDescriptions.push(descriptionExpense.value);
+      expenseAmounts.push(enterExpense.value);
+      loopExpenseDesc();
+      loopExpenseAmount();
+      renderExpenseHTML(descriptionExpense.value, enterExpense.value);
+      descriptionExpense.value = "";
+      enterExpense.value = "";
+    }
+  }
+};
+
+const loopExpenseDesc = function () {
+  expenseDescriptions.forEach((desc) => {});
+};
+
+const loopExpenseAmount = function () {
+  expenseAmounts.forEach((amount) => {
+    let amountNumber = parseFloat(amount);
+    actualBudgetUI.innerHTML = `Budget: ${actualBudget - amountNumber}`;
+  });
+};
+
+const renderExpenseHTML = function (name, value) {
+  const markup = `
+  <div class="expense">
+      <span class="expense-name">${name}</span>
+      <span class="expense-amount">${value}</span>
+    </div>
+  `;
+
+  expenseAndIncomeDiv.insertAdjacentHTML("afterbegin", markup);
+};
+
 submitIncomeBtn.addEventListener("click", incomeFunc);
+submitExpenseBtn.addEventListener("click", expenseFunc);
