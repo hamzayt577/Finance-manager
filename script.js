@@ -52,7 +52,7 @@ const loopIncomeAmount = function () {
 
 const renderIncomeHTML = function (name, value) {
   const markup = `
-  <div class="income">
+  <div class="income-real">
       <span class="income-name">${name}</span>
       <span class="income-amount">${value}</span>
     </div>
@@ -95,7 +95,7 @@ const loopExpenseAmount = function () {
 
 const renderExpenseHTML = function (name, value) {
   const markup = `
-  <div class="expense">
+  <div class="expense-real">
       <span class="expense-name">${name}</span>
       <span class="expense-amount">${value}</span>
     </div>
